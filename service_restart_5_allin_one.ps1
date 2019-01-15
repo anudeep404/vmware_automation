@@ -47,6 +47,6 @@ $output = Invoke-Expression -command $start_service
 $output
 }
 else {
-    Write-Host -Object "vsfwd service is already RUNNING" -ForegroundColor Red
+    Write-Host -Object "vsfwd service is already RUNNING on $esx" -ForegroundColor Red
 }
 }
