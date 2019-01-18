@@ -29,3 +29,5 @@ def StopVsfwd():
 		print(j)
 		EsxCli(j)
 StopVsfwd()
+
+'test'
