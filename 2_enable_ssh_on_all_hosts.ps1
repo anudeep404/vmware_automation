@@ -12,4 +12,3 @@ Get-VMHostService | where {$psitem.key -eq "tsm-ssh"} | Start-VMHostService }
 }
 
 python .\4_service_restart.py
-
