@@ -1,4 +1,5 @@
-#Finding ServerGUID
+#This progarm is built and tested on Python 3.7.1, please use the same version to avoid any run time issues.
+
 import os
 import re
 
