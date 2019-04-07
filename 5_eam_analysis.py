@@ -6,26 +6,27 @@ chdir()
 file = input("Enter the filename:")
 Agency_list=[]
 Agent_list=[]
+pattern = r'EsxAgentManager:agency['
+pattern1 = r'agent['
+pattern2 = r'host-'
+pattern3 = r'baseOvfEnvironment'
+pattern4 = r'controlNicKeyToIp'
+pattern5 = r'config'
+pattern6 = r'isUpgrading'
+pattern7 = r'wasUpgrading'
+pattern8 = r'rebootHostAfterVibUninstall'
+pattern9 = r'goalState'
 def eam_analysis():
         file_content = open(file).read()
         First_Line = open(file).readline()
         server_guid = First_Line.split(',')[2]
         print('\nThe server GUID is:\n')
         print(server_guid)
-        pattern = r'EsxAgentManager:agency['
-        pattern1 = r'agent['
-        pattern2 = r'host-'
-        pattern3 = r'baseOvfEnvironment'
-        pattern4 = r'controlNicKeyToIp'
-        pattern5 = r'config'
-        pattern6 = r'isUpgrading'
-        pattern7 = r'wasUpgrading'
-        pattern8 = r'rebootHostAfterVibUninstall'
-        pattern9 = r'goalState'
         print('\nThe list of Agencies under the Server GUID are as follows:\n')
-        for line in open(file):
-                if pattern in line:
-                        Agency = line.split(',')[2].split(':')[3]
+def Find_Agency(file_content_to_check):
+    for line in open(file_content_to_check):
+        if pattern in line:
+            Agency = line.split(',')[2].split(':')[3]
                         print(Agency)
                         Agency_list.append(Agency)
         for Agency in Agency_list:
